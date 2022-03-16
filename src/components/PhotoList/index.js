@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import photo from "../../assets/small/commercial/0.jpg";
 
-function PhotoList({ category }) {
+const PhotoList = ({ category }) => {
   const [photos] = useState([
     {
       name: "Grocery aisle",
@@ -124,7 +123,7 @@ function PhotoList({ category }) {
   return (
     <div>
       <div className="flex-row">
-        {photos.map((image, i) => (
+        {currentPhotos.map((image, i) => (
           <img
             src={require(`../../assets/small/${category}/${i}.jpg`).default}
             alt={image.name}
@@ -135,6 +134,6 @@ function PhotoList({ category }) {
       </div>
     </div>
   );
-}
+};
 
 export default PhotoList;
